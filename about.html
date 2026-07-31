@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HeritageHunt - About</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="about-page">
+    <nav>
+        <div class="logo"><img src="logo.png" alt="HeritageHunt Logo"></div>
+        <ul class="nav-links">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="explore.html">MAP</a></li>
+            <li><a href="stories.html">STORIES</a></li>
+            <li><a href="about.html" class="active">ABOUT</a></li>
+        </ul>
+         <a href="explore.html" class="btn-explore">EXPLORE</a>
+    </nav>
+
+    <main class="about-main-container">
+        <section class="mission-section">
+            <div class="mission-box">
+                <h2>HERITAGE HUNT</h2>
+                <p>Heritage Hunt is a digital journey through Sri Lanka's timeless landmarks.</p>
+                <p>Our mission is to preserve, celebrate, and share the island's diverse heritage through interactive storytelling, art, and design. Each page blends history, culture, and faith, inviting visitors to explore how Sri Lanka's ancient sites continue to inspire unity and wonder.</p>
+            </div>
+        </section>
+
+        <section class="form-section">
+            <div class="form-box">
+                <h3>Contact/Suggestion Form</h3>
+                <form id="suggestionForm" onsubmit="handleForm(event)">
+                    <input type="text" id="name" placeholder="Your Name" required>
+                    <input type="text" id="location" placeholder="Your Village/District" required>
+                    <input type="text" id="heritage" placeholder="Historical Spot Name" required>
+                    <textarea id="description" rows="4" placeholder="Description" required></textarea>
+                    <button type="submit" class="btn-submit">Send My Suggestions</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <h4>HERITAGE HUNT</h4>
+            <p>Discover the soul of Sri Lanka's heritage.</p><br>
+            <div class="social-links">
+                    <a href="" class="social-link"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="" class="social-link"><i class="fa-brands fa-facebook"></i></a>
+                </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

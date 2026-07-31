@@ -1,0 +1,357 @@
+/* ============================================================
+   HERITAGE HUNT - MAIN STYLESHEET
+   Description: Core styling for Home, Map, Stories, and About pages.
+============================================================
+*/
+
+/* --- 1. GLOBAL VARIABLES --- */
+:root {
+    /* Primary Color Palette */
+    --primary-green: #0a2e1d;   /* Dark forest green for headers/forms */
+    --accent-green: #4caf50;    /* Primary brand green for buttons/links */
+    --gold: #f39c12;            /* Accent color for highlights */
+    --bg-dark: #000000;         /* Main background color */
+    
+    /* UI Component Colors */
+    --light-green-box: #8fa981; /* Muted green for the About page mission box */
+    --form-input-bg: #d1d1d1;   /* Grey background for form fields */
+    --card-bg: #1a1a1a;         /* Dark grey for cards and sidebars */
+    --text-white: #ffffff;
+    --transition: all 0.3s ease;
+}
+
+/* --- 2. BASE RESET --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: var(--bg-dark);
+    color: var(--text-white);
+    overflow-x: hidden;
+}
+
+/* --- 3. NAVIGATION BAR --- */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: rgba(0, 0, 0, 0.7); /* Transparent black overlay */
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.logo img {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+    transition: var(--transition);
+    cursor: pointer;
+    border-radius: 30px;
+}
+
+.logo img:hover {
+    transform: scale(1.05);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 14px;
+    transition: var(--transition);
+}
+
+nav ul li a.active, 
+nav ul li a:hover {
+    color: var(--accent-green);
+}
+
+/* Navigation Buttons */
+.btn-explore {
+    background: var(--accent-green);
+    padding: 8px 20px;
+    border-radius: 20px;
+    color: #fff;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+/* --- 4. HOME PAGE SLIDESHOW --- */
+.slideshow-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out; /* Smooth fade transition */
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+/* Home Hero Content */
+.hero-content {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 10%;
+}
+
+.hero-content h1 {
+    font-size: 60px;
+    line-height: 1.2;
+    margin-bottom: 30px;
+}
+
+.btn-main {
+    background: var(--accent-green);
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: var(--transition);
+}
+
+/* --- 5. MAP EXPLORE PAGE --- */
+.explore-container {
+    display: flex;
+    height: 100vh;
+    padding-top: 80px;
+}
+
+.sidebar {
+    width: 350px;
+    background: var(--card-bg);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+#searchInput {
+    background: #333;
+    border: none;
+    padding: 10px;
+    color: white;
+    border-radius: 5px;
+    margin: 15px 0;
+}
+
+.scrollable-list {
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+/* Sidebar Location Cards */
+.site-card {
+    background: #222;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid #333;
+    transition: var(--transition);
+}
+
+.site-card img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+}
+
+.site-card-info {
+    padding: 10px;
+}
+
+#map {
+    flex-grow: 1;
+}
+
+/* --- 6. ABOUT PAGE & FORMS --- */
+body.about-page {
+    font-family: 'Georgia', serif;
+}
+
+.about-main-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    padding: 120px 5% 60px;
+    min-height: 80vh;
+}
+
+/* Mission Box Styling */
+.mission-section {
+    flex: 1;
+    background-color: var(--light-green-box);
+    color: #1a1a1a;
+    padding: 60px 40px;
+    border-radius: 20px 0 0 20px; /* Rounded corners on left side only */
+}
+
+.mission-box h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    text-align: center;
+    letter-spacing: 2px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.mission-box p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+/* Suggestion Form Section */
+.form-section {
+    flex: 1.2;
+    background-color: var(--primary-green);
+    padding: 60px 40px;
+    border-radius: 0 20px 20px 0; /* Rounded corners on right side only */
+}
+
+.form-box h3 {
+    font-size: 24px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+form input, 
+form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--form-input-bg);
+    color: #333;
+}
+
+.btn-submit {
+    display: block;
+    width: 60%;
+    margin: 20px auto 0;
+    padding: 12px;
+    background-color: #599b74;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: var(--transition);
+}
+
+.btn-submit:hover {
+    background-color: #4a8462;
+}
+
+/* --- 7. STORIES GRID --- */
+.stories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 120px 10% 50px;
+}
+
+.story-card {
+    background: var(--card-bg);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: var(--transition);
+    border: 1px solid #333;
+}
+
+.story-card:hover {
+    transform: translateY(-10px);
+}
+
+.story-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.story-content {
+    padding: 20px;
+}
+
+.story-content h2 {
+    color: var(--accent-green);
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.story-content p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #ccc;
+}
+
+/* --- 8. FOOTER & SOCIALS --- */
+footer {
+    text-align: center;
+    padding: 40px 0;
+    background: linear-gradient(to bottom, var(--primary-green), #000);
+}
+
+.footer-content h4 {
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    text-decoration: none;
+    transition: var(--transition);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social-link:hover {
+    background: var(--accent-green);
+    transform: translateY(-5px);
+    border-color: var(--gold);
+}
